@@ -1,0 +1,71 @@
+div {
+    border: 3px solid black;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+#yellow {
+    background-color: yellow;
+    color: brown;
+}
+
+.blue {
+    background-color: blue;
+    color: white;
+}
+
+.red {
+    background-color: red;
+}
+
+p + button {
+    background-color: darkred;
+    color: white;
+}
+
+p ~ q {
+    display: block;
+    margin-top: 0.5em;
+    background-color: white;
+    color: darkred;
+}
+
+ol li {
+    background-color: springgreen;
+}
+
+ol > li {
+    background-color: orange;
+}
+
+ul > li {
+    background-color: orange;
+}
+
+ul li {
+    background-color: springgreen;
+}
+
+h6:first-child {
+    background-color: green;
+    color: white;
+}
+
+section {
+    background-color: #000;
+    color: #000;
+}
+
+section:hover {
+    color: #bbb;
+}
+
+ul.alternating li:nth-child(2n + 1) {
+    background-color: pink;
+    color: brown;
+}
+
+ul.alternating li:nth-child(2n) {
+    background-color: purple;
+    color: #fff;
+}

@@ -1,0 +1,67 @@
+html {
+    background-color: #ccc;
+}
+
+#boxmodel {
+    background-color: red;
+    background-clip: content-box; /* so that padding area is not colored with background color */
+    padding: 2em;
+    box-shadow: inset 0 0 0 2em green; /* to color the padding area */
+    border: 1em solid black;
+    margin: 2em;
+    outline-color: blue;
+}
+
+.block,
+#block_50,
+#inline,
+#inline_1,
+#inline_size,
+#inline_block {
+    background-color: red;
+}
+
+#block_50,
+#inline_size,
+#inline_block {
+    height: 3em;
+    width: 80%;
+}
+
+.inline,
+#inline_block_2,
+#inline_block_3 {
+    background-color: blue;
+    color: white;
+}
+
+#inline_block,
+#inline_block_2,
+#inline_block_3 {
+    display: inline-block;
+}
+
+.padding_horizontal {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.margin_horizontal {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.padding_vertical {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.margin_vertical {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+
+div {
+    margin-bottom: 0.5em;
+}

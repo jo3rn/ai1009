@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="selecting.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      Beispiele zu einzelnen
+      <a href="https://developer.mozilla.org/de/docs/Web/CSS/CSS_Selectors">
+        CSS-Selektoren
+      </a>
+      und der
+      <a href="https://developer.mozilla.org/de/docs/Web/CSS/Specificity">
+        CSS-Spezifität
+      </a>
+      . Schaue dir die zugehörigen Dateien (
+      <code>index.html</code>
+      und
+      <code>selecting.css</code>
+      ) an. Nutze auch die Developer-Tools, um die Elemente und deren
+      Style-Regeln zu untersuchen und zu verstehen.
+    </header>
+
+    <h1>
+      <a href="https://developer.mozilla.org/de/docs/Web/CSS/Type_selectors">
+        <code>type</code>
+      </a>
+      selector
+    </h1>
+
+    <div>
+      <p>
+        Alle
+        <code>div</code>
+        s auf dieser Seite haben das in
+        <code>selecting.css</code>
+        unter
+        <code>div { /* ... */ }</code>
+        festgelegte Aussehen, z.B. einen schwarzen Rand (border).
+      </p>
+    </div>
+
+    <h1>
+      <a href="https://developer.mozilla.org/de/docs/Web/CSS/Class_selectors">
+        <code>.class</code>
+      </a>
+      und
+      <a href="https://developer.mozilla.org/de/docs/Web/CSS/ID_selectors">
+        <code>#id</code>
+      </a>
+      selector
+    </h1>
+
+    <div>
+      <p class="blue">
+        Ich habe nur
+        <code>blue</code>
+        als
+        <code>class</code>
+        , deshalb gilt für mich
+        <code>.blue</code>
+      </p>
+      <p class="blue red">
+        Ich bin
+        <code>.blue</code>
+        und
+        <code>.red</code>
+        , aber
+        <code>.red</code>
+        kommt später im
+        <code>selecting.css</code>
+        , deshalb greift
+        <code>.red</code>
+        . Die weiße Schriftfarbe habe ich aber von
+        <code>.blue</code>
+      </p>
+      <p class="blue" id="yellow">
+        Ich habe
+        <code>blue</code>
+        als
+        <code>class</code>
+        , aber mit
+        <code>yellow</code>
+        als
+        <code>id</code>
+        werden die
+        <code>.blue</code>
+        Regeln überschrieben.
+      </p>
+    </div>
+
+    <h1>
+      Geschwister-Kombinatoren
+      <a
+        href="https://developer.mozilla.org/de/docs/Web/CSS/Adjacent_sibling_combinator"
+      >
+        +
+      </a>
+      und
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator"
+      >
+        ~
+      </a>
+    </h1>
+
+    <div>
+      <p>
+        Ich bin ein p und das erste Kind in diesem
+        <code>div</code>
+      </p>
+      <button>
+        Ich bin ein
+        <code>button</code>
+        und komme direkt nach dem
+        <code>p</code>
+        . Bei mir greift der
+        <code>+</code>
+        Kombinator.
+      </button>
+      <button>
+        Ich bin auch ein Geschwister von
+        <code>p</code>
+        , aber komme nicht direkt danach.
+      </button>
+      <q>
+        Ich bin ein
+        <code>q</code>
+        und auch ein Geschwister von
+        <code>p</code>
+        . Mit dem
+        <code>~</code>
+        Kombinator muss ich nicht direkt nach dem
+        <code>p</code>
+        folgen.
+      </q>
+    </div>
+
+    <h1>
+      Kind-Kombinatoren
+      <a href="https://developer.mozilla.org/de/docs/Web/CSS/Child_combinator">
+        &gt;
+      </a>
+      und
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator"
+      >
+        whitespace
+      </a>
+    </h1>
+
+    <div>
+      <p>
+        Achte auf die unterschiedliche Reihenfolge der Kombinatoren im
+        <code>selecting.css</code>
+        für
+        <code>ol</code>
+        und
+        <code>ul</code>
+        . Aufgrund der Spezifität sind die ersten drei Elemente einmal orange
+        und einmal grün.
+      </p>
+
+      <ol>
+        <li>
+          Ich bin das erste
+          <code>li</code>
+          -Element, dass auf
+          <code>ol</code>
+          folgt.
+        </li>
+        <li>
+          Ich bin das zweite
+          <code>li</code>
+        </li>
+        <li>
+          Ich bin das dritte
+          <code>li</code>
+        </li>
+        <ul>
+          <li>
+            Ich bin ein verschachteltes
+            <code>li</code>
+            (kein direktes Kind von
+            <code>ol</code>
+            )
+          </li>
+        </ul>
+      </ol>
+
+      <p></p>
+
+      <ul>
+        <li>
+          Ich bin das erste
+          <code>li</code>
+          -Element, dass auf
+          <code>ul</code>
+          folgt.
+        </li>
+        <li>
+          Ich bin das zweite
+          <code>li</code>
+        </li>
+        <li>
+          Ich bin das dritte
+          <code>li</code>
+        </li>
+        <ul>
+          <li>
+            Ich bin ein verschachteltes
+            <code>li</code>
+            (kein direktes Kind von
+            <code>ul</code>
+            )
+          </li>
+        </ul>
+      </ul>
+    </div>
+
+    <h1>
+      <a href="https://developer.mozilla.org/de/docs/Web/CSS/Pseudo-classes">
+        Pseudoklassen
+      </a>
+    </h1>
+
+    <h2>
+      <a href="https://developer.mozilla.org/de/docs/Web/CSS/:hover">
+        <code>:hover</code>
+      </a>
+    </h2>
+
+    <div>
+      <p>Fahre mit der Maus über den schwarzen Bereich unter mir.</p>
+      <section>
+        <h2>Pseudoklassen</h2>
+        <p>
+          Mit Pseudoklassen wie
+          <code>:first-child</code>
+          oder
+          <code>:hover</code>
+          kann man die Selektoren weiter eingrenzen.
+        </p>
+      </section>
+    </div>
+
+    <h2>
+      <a href="https://developer.mozilla.org/de/docs/Web/CSS/:first-child">
+        <code>:first-child</code>
+      </a>
+    </h2>
+
+    <div>
+      <p>
+        Ich bin ein
+        <code>p</code>
+        und das erste Kind in diesem
+        <code>div</code>
+      </p>
+      <h6>
+        Ich bin das erste
+        <code>h6</code>
+        im
+        <code>div</code>
+        , aber nicht das erste Kind. Deshalb zählt
+        <code>h6:first-child</code>
+        für mich nicht
+      </h6>
+    </div>
+
+    <div>
+      <h6>
+        Ich bin das erste h6 im div und das erste Kind.
+        <code>h6:first-child</code>
+        zählt für mich, deshalb bin ich grün mit weißer Schrift
+      </h6>
+      <h6>
+        Ich bin das zweite h6 im div, hier zählt
+        <code>h6:first-child</code>
+        wieder nicht.
+      </h6>
+    </div>
+
+    <h2>
+      <a href="https://developer.mozilla.org/de/docs/Web/CSS/:nth-child">
+        <code>:nth-child</code>
+      </a>
+    </h2>
+
+    <div>
+      <ul class="alternating">
+        <li>wir sind pink mit brauner Schrift</li>
+        <li>wir sind lila mit weißer Schrift</li>
+        <li>wir haben (2n + 1 - 1) Geschwister vor uns</li>
+        <li>wir haben (2n - 1) Geschwister vor uns</li>
+        <li>d.h. alle ungeraden Einträge sehen so aus</li>
+        <li>und alle geraden Einträge so</li>
+      </ul>
+    </div>
+  </body>
+</html>

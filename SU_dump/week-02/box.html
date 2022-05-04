@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="box.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model</title>
+  </head>
+  <body>
+    <p id="boxmodel">Hi, ich bin ein Box Model!</p>
+    <ul>
+      <li>rot = content</li>
+      <li>grün = padding</li>
+      <li>schwarz = border</li>
+      <li>nicht sichtbar: margin (Abstand nach dem border)</li>
+    </ul>
+    <p>
+      Diese Bereiche können auch über die Developer-Tools inspiziert werden.
+    </p>
+    <h1>Display Varianten</h1>
+    <h2>block</h2>
+    <p class="block">
+      display
+      <code>block</code>
+      (z.B. ein
+      <code>p</code>
+      )
+    </p>
+    <p id="block_50">ich bin display block mit height: 3em und width: 80%</p>
+    <ul>
+      <li>nimmt die komplette verfügbare Breite ein</li>
+      <li>hat Zeilenumbruch am Anfang und am Ende des Elements</li>
+      <li>Größe veränderbar</li>
+    </ul>
+
+    <hr />
+    <h2>inline</h2>
+    <div>
+      <q id="inline">
+        display
+        <code>inline</code>
+        (z.B. ein
+        <code>q</code>
+        )
+      </q>
+    </div>
+
+    <div>
+      <span id="inline_1">ich bin ein inline Element</span>
+      <span class="inline">
+        ich bin ein weiteres inline Element, direkt dahinter
+      </span>
+    </div>
+
+    <div>
+      <span id="inline_size">
+        ich bin ein inline Element mit height: 3em und width: 80%, aber das
+        bewirkt nichts...
+      </span>
+    </div>
+
+    <ul>
+      <li>nimmt nur den für den content benötigten Platz ein</li>
+      <li>hat keinen Zeilenumbruch</li>
+      <li>Größe lässt sich nicht manipulieren</li>
+    </ul>
+
+    <hr />
+    <h2>inline-block</h2>
+    <span id="inline_block">
+      ich bin inline-block, das mit der Größe klappt jetzt
+    </span>
+    <span id="inline_block_2">ich bin auch inline-block</span>
+
+    <ul>
+      <li>
+        nimmt für den content benötigte Breite ein, außer man spezifiziert
+        andere Größe
+      </li>
+      <li>hat keinen Zeilenumbruch</li>
+    </ul>
+
+    <hr />
+
+    <p>
+      Weitere Unterschiede zwischen
+      <code>block</code>
+      ,
+      <code>inline</code>
+      und
+      <code>inline-block</code>
+      werden bei der Verwendung von padding und margin deutlich:
+    </p>
+
+    <p class="block">
+      Ich bin ein
+      <code>block</code>
+      Element
+      <span class="inline padding_horizontal">
+        ich bin inline mit padding links und rechts
+      </span>
+    </p>
+
+    <p class="block">
+      Ich bin ein
+      <code>block</code>
+      Element
+      <span class="inline margin_horizontal">
+        ich bin inline mit margin links und rechts
+      </span>
+    </p>
+
+    <p class="block">
+      Ich bin auch
+      <code>block</code>
+    </p>
+
+    <p class="block">
+      Ich bin ein
+      <code>block</code>
+      Element
+      <span class="inline margin_vertical padding_vertical">
+        ich bin inline mit vertikalem margin/padding. Ich "lege" mich über
+        andere Elemente.
+      </span>
+    </p>
+
+    <p class="block">
+      Ich bin auch
+      <code>block</code>
+    </p>
+
+    <p class="block">
+      Ich bin ein
+      <code>block</code>
+      Element
+      <span class="margin_vertical padding_vertical" id="inline_block_3">
+        ich bin inline mit vertikalem margin/padding. Ich beanspruche Platz für
+        mich.
+      </span>
+    </p>
+  </body>
+</html>
