@@ -1,0 +1,72 @@
+body {
+    background-color: #eeeeee;
+    color: #585858;
+    font-family: Verdana, sans-serif;
+}
+
+form {
+    width: 32em;
+}
+
+legend {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #585858;
+    border-radius: 5px;
+}
+
+fieldset {
+    background-color: #e6e6e6;
+}
+
+legend, .lightgrey {
+    background-color: #f6f6f6;
+}
+
+/* until here: same CSS for all versions */
+
+label.align {
+    text-align: right;
+    flex-basis: 7em;
+}
+
+.flex_container {
+    display: flex;
+}
+
+#flex_all {
+    flex-direction: column;
+    row-gap: 2em;
+    padding: 1em;
+}
+
+#num_container,
+#text_container {
+    flex-direction: column;
+    row-gap: 0.75em;
+}
+
+.flex_pair {
+    display: flex;
+    column-gap: 0.75em;
+}
+
+input[type="number"] {
+    flex-basis: 8em;
+    min-width: 0;
+}
+
+input[type="text"],
+input[type="email"] {
+    flex-basis: 13em;
+    min-width: 0;
+}
+
+#gender_container {
+    justify-content: space-evenly;
+}
+
+#button_container {
+    justify-content: flex-end;
+    column-gap: 0.75em;
+}

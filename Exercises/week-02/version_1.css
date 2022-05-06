@@ -1,0 +1,63 @@
+body {
+    background-color: #eeeeee;
+    color: #585858;
+    font-family: Verdana, sans-serif;
+}
+
+form {
+    width: 32em;
+}
+
+legend {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #585858;
+    border-radius: 5px;
+}
+
+fieldset {
+    background-color: #e6e6e6;
+}
+
+legend, .lightgrey {
+    background-color: #f6f6f6;
+}
+
+/* until here: same CSS for all versions */
+
+label.align {
+    text-align: right;
+    display: inline-block;
+    width: 7em;
+    padding-right: 1em;
+}
+
+.input_container {
+    padding: 1.5em;
+}
+
+input[type="number"] {
+    width: 8em;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 13em;
+}
+
+.gender_container {
+    display: inline-block;
+    width: 25%;
+    padding: 1em;
+}
+
+#button_container {
+    float: right;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 1em;
+}
+
+.padding_bottom {
+    padding-bottom: 1em;
+}

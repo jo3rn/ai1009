@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="version_2.css" />
+    <title>BMI-Rechner</title>
+  </head>
+  <body>
+    <h1>BMI-Rechner (Grid)</h1>
+
+    <form
+      action="https://vulcan.informatik.hs-fulda.de/bmi_berechnen.php"
+      method="get"
+    >
+      <fieldset>
+        <legend>Angaben zur BMI-Berechnung</legend>
+
+        <div class="grid_container" id="num_container">
+          <label class="align" for="gewicht">Gewicht</label>
+          <input
+            type="number"
+            name="gewicht"
+            id="gewicht"
+            value="60"
+            required="true"
+          />
+
+          <label class="align" for="groesse">Größe</label>
+          <input
+            type="number"
+            name="groesse"
+            id="groesse"
+            value="1.70"
+            step="0.01"
+            required="true"
+          />
+        </div>
+
+        <fieldset class="lightgrey">
+          <legend>Geschlecht</legend>
+          <div class="grid_container" id="gender_container">
+            <input type="radio" name="geschlecht" id="female" />
+            <label for="female">Weiblich</label>
+
+            <input type="radio" name="geschlecht" id="male" />
+            <label for="male">Männlich</label>
+
+            <input type="radio" name="geschlecht" id="diverse" />
+            <label for="diverse">Sonstiges</label>
+          </div>
+        </fieldset>
+
+        <div class="grid_container" id="text_container">
+          <label class="align" for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="Max Muster" />
+          <label class="align" for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="max.muster@gmail.com"
+          />
+        </div>
+
+        <div class="grid_container" id="button_container">
+          <input type="submit" value="Absenden" />
+          <input type="reset" value="Zurücksetzen" />
+        </div>
+      </fieldset>
+    </form>
+    <p>Ihr Body Mass Index beträgt ___.</p>
+  </body>
+</html>
