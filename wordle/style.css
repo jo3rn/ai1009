@@ -1,0 +1,32 @@
+html {
+    background-color: #121213;
+    color: white;
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px white solid;
+}
+
+.keyboard-button {
+    background-color: #818384;
+    color: white;
+    text-transform: uppercase;
+    width: 5%;
+    height: 3em;
+    margin-bottom: 0.5em;
+    border: none;
+    border-radius: 4px;
+}
+
+.action-button {
+    width: 7.5%;
+}
+
+.keyboard-row {
+    text-align: center;
+}
+
+#game {
+    display: grid;
+}
