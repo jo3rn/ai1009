@@ -1,3 +1,35 @@
-p.a {
+/*
+weitere mögliche Selektoren:
+#c
+p.a
+p[class=a]
+p[class=A i]
+.b
+.b > p
+.b p
+div .a
+div:first-child
+.a:first-child
+.b:first-child
+.a:nth-child(1)
+.a:nth-child(1)
+div:nth-child(odd)
+...
+*/
+
+#d {
     background-color: red;
 }
+
+/*
+Bonus:
+dieser Selektor funktioniert,
+wenn man die Seite mit Live-Server öffnet,
+ansonsten nicht. Wieso?
+
+.a:last-child
+
+Antwort:
+Live-Server fügt ein <script> tag am Ende von <body> ein,
+sodass das zweite div nicht mehr das letzte Kind von <body> ist
+*/
