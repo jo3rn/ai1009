@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      div > p {
+      p > p {
         background-color: red;
       }
     </style>
   </head>
   <body>
-    <div id="a">
-      <p id="d">Hallo</p>
-    </div>
+    <p>
+      <p>
+        p > p funktioniert hier nicht, weil p nicht verschachtelt werden kann, siehe <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element">HTML spec</a>
+      </p>
+    </p>
     <p></p>
     <p></p>
     <p></p>
