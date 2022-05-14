@@ -46,7 +46,7 @@ footer {
 }
 
 /* media query for a cleaner mobile layout */
-@media (max-width: 400px) {
+@media only screen and (max-width: 400px) {
   .grid-container {
     grid-template-areas:
       "header"
