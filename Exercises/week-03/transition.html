@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Effekte</title>
+    <style>
+      body {
+        background: #0e83cd;
+      }
+
+      a {
+        display: block;
+        margin: 2rem auto;
+        padding: 1rem;
+        max-width: 15rem;
+        border: 3px solid white;
+        border-radius: 3px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      .switch:hover {
+        background-color: #afd8ff;
+      }
+
+      .vertical {
+        position: relative;
+      }
+
+      .vertical::after {
+        content: "";
+        background-color: rgba(175, 216, 255, 0.5);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        transition: all 0.5s;
+      }
+
+      .vertical:hover::after {
+        height: 100%;
+        top: 0;
+      }
+
+      .button {
+        background-color: #0e83cd;
+      }
+
+      .button:hover {
+        animation-name: background-change;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes background-change {
+        10% {
+          background-image: linear-gradient(#0e83cd 35%, purple, #0e83cd 65%);
+        }
+        20% {
+          background-image: linear-gradient(#0e83cd 20%, purple, #0e83cd 80%);
+        }
+        30% {
+          background-image: linear-gradient(#0e83cd 5%, purple, #0e83cd 95%);
+        }
+        40% {
+          background-image: linear-gradient(#0e83cd -10%, purple, #0e83cd 110%);
+        }
+        50% {
+          background-image: linear-gradient(#0e83cd -25%, purple, #0e83cd 125%);
+        }
+        60% {
+          background-image: linear-gradient(#0e83cd -40%, purple, #0e83cd 140%);
+        }
+        70% {
+          background-image: linear-gradient(#0e83cd -55%, purple, #0e83cd 155%);
+        }
+        80% {
+          background-image: linear-gradient(#0e83cd -70%, purple, #0e83cd 170%);
+        }
+        90% {
+          background-image: linear-gradient(#0e83cd -95%, purple, #0e83cd 195%);
+        }
+        100% {
+          background-image: linear-gradient(
+            #0e83cd -110%,
+            purple,
+            #0e83cd 210%
+          );
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p>Old-school Effekt:</p>
+    <a href="#" class="switch">Button change (Hover)</a>
+
+    <p>
+      Lösung mit
+      <code>::after</code>
+    </p>
+    <a href="#" class="vertical">Button with ::after (&Uuml;bung)</a>
+
+    <p>
+      Lösung mit
+      <code>animation</code>
+    </p>
+    <a href="#" class="button">Button with keyframes</a>
+  </body>
+</html>
