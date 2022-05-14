@@ -1,28 +1,37 @@
 /*
 weitere mögliche Selektoren:
-#c
 p.a
 p[class=a]
 p[class=A i]
-.b
 .b > p
 .b p
 div .a
-div:first-child
 .a:first-child
-.b:first-child
 .a:nth-child(1)
-.a:nth-child(1)
-div:nth-child(odd)
+.a:nth-child(odd)
 ...
 */
 
 #d {
-    background-color: red;
+    color: red;
 }
 
 /*
 Bonus:
+Auch diese Selektoren funktionieren zunächst:
+#c
+.b
+div:first-child
+
+Hiermit wird allerdings das Eltern-<div> gestyled.
+background-color wird nicht an <p> vererbt.
+<p> erscheint rot, weil es im Eltern-<div> positioniert ist.
+Sollte <p>, z.B. mit top, außerhalb des Eltern-<div>s positioniert werden,
+erscheint es wieder in der default background-color.
+*/
+
+/*
+Bonus 2:
 dieser Selektor funktioniert,
 wenn man die Seite mit Live-Server öffnet,
 ansonsten nicht. Wieso?
