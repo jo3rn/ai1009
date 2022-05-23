@@ -30,3 +30,28 @@ header {
 #game {
     display: grid;
 }
+
+.game-row {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+}
+
+.row-cell {
+    display: flex;
+    border: 1px solid grey;
+    width: 10%;
+    height: 2rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.yellow {
+    background-color: #b59f3b;
+}
+
+.green {
+    background-color: #538d4e;
+}
