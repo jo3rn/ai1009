@@ -1,57 +1,91 @@
+:root {
+    --green: #538d4e;
+    --yellow: #b59f3b;
+    --grey: #3a3a3c;
+}
+
 html {
     background-color: #121213;
     color: white;
+    font-family: sans-serif;
 }
 
 header {
     text-align: center;
-    border-bottom: 1px white solid;
+    border-bottom: 1px #3a3a3c solid;
+}
+
+main {
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .keyboard-button {
     background-color: #818384;
     color: white;
     text-transform: uppercase;
-    width: 5%;
     height: 3em;
-    margin-bottom: 0.5em;
     border: none;
     border-radius: 4px;
+    flex: 1;
+    cursor: pointer;
 }
 
 .action-button {
-    width: 7.5%;
+    flex: 1.5;
+}
+
+.empty-button {
+    flex: 0.5;
 }
 
 .keyboard-row {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5em;
+    gap: 0.33em;
 }
 
 #game {
     display: grid;
+    padding: 0.5em;
+    grid-gap: 0.5em;
 }
 
 .game-row {
     display: flex;
-    gap: 3px;
+    gap: 0.5em;
     justify-content: center;
 }
 
 .row-cell {
     display: flex;
-    border: 1px solid grey;
+    border: 1px solid var(--grey);
     width: 10%;
-    height: 2rem;
     text-align: center;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+    aspect-ratio: 1 / 1;
 }
 
 .yellow {
-    background-color: #b59f3b;
+    background-color: var(--yellow);
+    border-color: var(--yellow);
 }
 
 .green {
-    background-color: #538d4e;
+    background-color: var(--green);
+    border-color: var(--green);
+}
+
+.grey {
+    background-color: var(--grey);
+    border-color: var(--grey);
+}
+
+#backspace {
+    color: white;
 }

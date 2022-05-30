@@ -14,7 +14,7 @@
         <div class="game-row">
           <div class="row-cell yellow">h</div>
           <div class="row-cell green">i</div>
-          <div class="row-cell">n</div>
+          <div class="row-cell grey">n</div>
           <div class="row-cell">g</div>
           <div class="row-cell">e</div>
         </div>
@@ -68,6 +68,7 @@
           <button class="keyboard-button">p</button>
         </div>
         <div class="keyboard-row">
+          <div class="empty-button"></div>
           <button class="keyboard-button">a</button>
           <button class="keyboard-button">s</button>
           <button class="keyboard-button">d</button>
@@ -77,9 +78,10 @@
           <button class="keyboard-button">j</button>
           <button class="keyboard-button">k</button>
           <button class="keyboard-button">l</button>
+          <div class="empty-button"></div>
         </div>
         <div class="keyboard-row">
-          <button class="keyboard-button action-button">Enter</button>
+          <button class="keyboard-button action-button">enter</button>
           <button class="keyboard-button">z</button>
           <button class="keyboard-button">x</button>
           <button class="keyboard-button">c</button>
@@ -87,7 +89,9 @@
           <button class="keyboard-button">b</button>
           <button class="keyboard-button">n</button>
           <button class="keyboard-button">m</button>
-          <button class="keyboard-button action-button">Löschen</button>
+          <button class="keyboard-button action-button" id="backspace">
+            &#128465;
+          </button>
         </div>
       </div>
     </main>
