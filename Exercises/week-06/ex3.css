@@ -1,0 +1,10 @@
+img {
+  display: block;
+  width: 15em;
+  height: 15em;
+}
+
+img[data-src] {
+  background: url("https://media.tenor.com/images/5f1c57a4f18059b1bb946df247f8561d/tenor.gif");
+  background-size: cover;
+}

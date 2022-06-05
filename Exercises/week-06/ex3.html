@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ex3.css" />
+    <script defer src="ex3.js"></script>
+    <title>Lazy Loading</title>
+  </head>
+  <body>
+    <div>
+        <p>Um den Lazy-Loading Effekt zu sehen:
+            <ul>
+                <li>Cache leeren und ausschalten</li>
+                <li>Netzwerk "Throttling" in den Developer Tools einschalten</li>
+            </ul>
+        </p>
+      <img
+        class="lazy"
+        data-src="https://cdn.pixabay.com/photo/2016/12/03/15/11/sloth-1879999__340.jpg"
+        alt="lazy sloth"
+      />
+      <img
+        class="lazy"
+        data-src="https://cdn.pixabay.com/photo/2016/05/10/15/29/bear-1383980__340.jpg"
+        alt="lazy bear"
+      />
+      <img
+        class="lazy"
+        data-src="https://cdn.pixabay.com/photo/2021/02/22/05/26/employee-6038877__340.png"
+        alt="lazy dude"
+      />
+      <img
+        class="lazy"
+        data-src="https://cdn.pixabay.com/photo/2017/08/03/11/17/people-2575664__340.jpg"
+        alt="lazy sunday"
+      />
+    </div>
+  </body>
+</html>

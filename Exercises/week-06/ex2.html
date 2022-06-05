@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lightbox</title>
+    <style>
+      img.thumb {
+        cursor: pointer;
+      }
+
+      #lightbox {
+        border: 1px solid white;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.9);
+        /* move top left corner into the middle of the screen*/
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        /* translate: shift image to top by half the height and to left by half the width
+        scale: reduce size to 50% for zoom effect on opening */
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+        transition: opacity 3s, transform 1s;
+      }
+
+      #lightbox.show {
+        opacity: 1;
+        /* scale: increase size to 100% to achieve zoom effect */
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      #lightbox.hide {
+        opacity: 0;
+      }
+
+      #lightbox img {
+        display: block;
+      }
+
+      #close {
+        /* position in top right corner of #lightbox div */
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        top: 0;
+        right: 0;
+      }
+
+      #close::before,
+      #close::after {
+        /* create two red blocks (one for ::before and one for ::after)
+        that will form the "X" */
+        content: " ";
+        height: 7px;
+        background: red;
+        cursor: pointer;
+        /* position in the middle of #close a */
+        position: absolute;
+        top: 50%;
+        width: 100%;
+      }
+
+      #close::before {
+        /* move one red block upwards by half the height and rotate by 45° */
+        transform: translate(0, -50%) rotate(45deg);
+      }
+
+      #close::after {
+        /* move the other red block upwards by half the height and rotate by 135° */
+        transform: translate(0, -50%) rotate(135deg);
+      }
+
+      #previous,
+      #next {
+        position: absolute;
+        top: 50%;
+        font-size: 4em;
+        transform: translate(0, -50%);
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+
+      #previous {
+        left: -15%;
+      }
+
+      #next {
+        right: -15%;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      class="thumb"
+      src="https://static-b.imgix.net/starfish.png?w=100&h=100"
+      data-src="https://static-b.imgix.net/starfish.png?w=500&h=500"
+    />
+    <img
+      class="thumb"
+      src="https://assets.imgix.net/unsplash/goldengate.jpg?h=100&max-w=100"
+      data-src="https://assets.imgix.net/unsplash/goldengate.jpg?w=500&h=500"
+    />
+    <div id="lightbox" class="hide">
+      <a id="close" href="#"></a>
+      <img id="targetImage" />
+      <button id="previous">&lt;</button>
+      <button id="next">&gt;</button>
+    </div>
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const images = Array.from(document.getElementsByClassName("thumb"));
+      const closeX = document.getElementById("close");
+      const targetImage = document.getElementById("targetImage");
+      const arrowPrevious = document.getElementById("previous");
+      const arrowNext = document.getElementById("next");
+      let currentIndex;
+
+      for (image of images) {
+        image.addEventListener("click", openLightbox, false);
+      }
+
+      closeX.addEventListener("click", closeLightbox, false);
+      arrowPrevious.addEventListener("click", loadPrevious, false);
+      arrowNext.addEventListener("click", loadNext, false);
+
+      function openLightbox(e) {
+        lightbox.className = "show";
+        loadContent(e.target);
+        currentIndex = images.indexOf(e.target);
+      }
+
+      function closeLightbox(e) {
+        e.preventDefault();
+        lightbox.className = "hide";
+      }
+
+      function loadContent(img) {
+        let imgSrc = img.dataset.src;
+        targetImage.setAttribute("src", imgSrc);
+      }
+
+      function loadPrevious(e) {
+        currentIndex = currentIndex == 0 ? images.length - 1 : currentIndex - 1;
+        loadContent(images[currentIndex]);
+      }
+
+      function loadNext(e) {
+        currentIndex = currentIndex == images.length - 1 ? 0 : currentIndex + 1;
+        loadContent(images[currentIndex]);
+      }
+    </script>
+  </body>
+</html>
