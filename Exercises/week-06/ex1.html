@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <style>
+      .schiebbar {
+        position: absolute;
+        z-index: 1;
+        width: 150px;
+        height: 80px;
+        left: 50px;
+        top: 50px;
+        background-color: #f6e3ce;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="schiebbar" id="myDiv"></div>
+    <script>
+      "use strict";
+      const body1 = document.body;
+      const body2 = document.getElementsByTagName("body")[0];
+      const body3 = document.querySelector("body");
+      console.log(body1);
+      console.log(body2);
+      console.log(body3);
+      const elem = document.getElementById("myDiv");
+      let dragging = false;
+      let lastX, lastY;
+
+      elem.addEventListener(
+        "mousedown",
+        function (evt) {
+          dragging = true;
+          lastX = evt.clientX;
+          lastY = evt.clientY;
+        },
+        false
+      );
+
+      elem.addEventListener(
+        "mousemove",
+        function (evt) {
+          if (dragging) {
+            const style = window.getComputedStyle(elem, null);
+            const posx = parseInt(style.getPropertyValue("left"));
+            const posy = parseInt(style.getPropertyValue("top"));
+            const x = evt.clientX;
+            const y = evt.clientY;
+            const dx = x - lastX;
+            const dy = y - lastY;
+            elem.style.left = posx + dx + "px";
+            elem.style.top = posy + dy + "px";
+            lastX = x;
+            lastY = y;
+          }
+        },
+        false
+      );
+
+      elem.addEventListener("mouseup", function (evt) {
+        dragging = false;
+      });
+    </script>
+  </body>
+</html>
