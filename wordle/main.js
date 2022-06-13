@@ -1,6 +1,22 @@
-console.log("Bin da");
-
 const keyboardButtons = document.querySelectorAll(".keyboard-button");
+
+const boardState = ["", "", "", "", "", ""];
+const solution = "fulda";
+const evaluations = [null, null, null, null, null, null];
+let rowIndex = 0;
+
+const evaluateWord = (word) => {
+  if (word === solution) {
+    evaluations[rowIndex] = [
+      "correct",
+      "correct",
+      "correct",
+      "correct",
+      "correct",
+    ];
+  } else {
+  }
+};
 
 const enterPressed = () => {
   console.log("enter gedrückt");
@@ -26,3 +42,6 @@ for (const keyboardButton of keyboardButtons) {
     });
   }
 }
+
+evaluateWord("donor");
+console.log(evaluations);
