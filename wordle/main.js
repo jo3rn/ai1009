@@ -5,16 +5,19 @@ const solution = "fulda";
 const evaluations = [null, null, null, null, null, null];
 let rowIndex = 0;
 
+const isEqual = (attempt, index) => {
+  return attempt[index] === solution[index];
+};
+
+const isPartOf = (attempt) => {
+  return solution.indexOf(attempt) != -1;
+};
+
 const evaluateWord = (word) => {
-  if (word === solution) {
-    evaluations[rowIndex] = [
-      "correct",
-      "correct",
-      "correct",
-      "correct",
-      "correct",
-    ];
-  } else {
+  for (const index in word) {
+    console.log(isEqual(word, index));
+    console.log(isPartOf(word[index]));
+    console.log(word[index]);
   }
 };
 
@@ -43,5 +46,5 @@ for (const keyboardButton of keyboardButtons) {
   }
 }
 
-evaluateWord("donor");
+evaluateWord("fanor");
 console.log(evaluations);
