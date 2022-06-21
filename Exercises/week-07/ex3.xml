@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bmi>
+  <input>
+    <name>Regina Müller</name>
+    <weight>50</weight>
+    <height>1.6</height>
+    <gender>female</gender>
+    <email>regina@mueller.com</email>
+    <remarks></remarks>
+  </input>
+  <input>
+    <name>Peter Meier</name>
+    <weight>80</weight>
+    <height>1.9</height>
+    <gender>male</gender>
+    <email>peter@meier.com</email>
+    <remarks></remarks>
+  </input>
+  <input>
+    <name>Torsten Schmidt</name>
+    <weight>100</weight>
+    <height>1.86</height>
+    <gender>male</gender>
+    <email>torsten@schmidt.com</email>
+    <remarks></remarks>
+  </input>
+</bmi>

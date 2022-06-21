@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <script src="ex4.js" defer></script>
+    <link rel="stylesheet" href="ex4.css" />
+  </head>
+  <body>
+    <h1></h1>
+
+    <form action="" id="registration" method="post">
+      <button id="language">
+        <span alt="German Flag" id="flag">&#127465&#127466</span>
+
+      </button>
+      <p></p>
+      <fieldset>
+        <legend></legend>
+        <label for="user"></label>
+        <div class="input">
+          <input type="text" id="user" required />
+        </div>
+        <label for="password"></label>
+        <div class="input">
+          <input type="password" name="password" id="password" required />
+        </div>
+        <label for="passwordRepeat"></label>
+        <div class="input">
+          <input type="password" name="password" id="passwordRepeat" required />
+          <span class="hint" id="passwordHint"></span>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend></legend>
+        <label for="first"></label>
+        <div class="input">
+          <input type="text" name="firstName" id="first" required />
+        </div>
+        <label for="middle"></label>
+        <div class="input">
+          <input type="text" name="middleName" id="middle" />
+        </div>
+        <label for="last"></label>
+        <div class="input"><input type="text" name="lastName" id="last" /></div>
+        <label for="email"></label>
+        <div class="input">
+          <input type="email" name="email" id="email" />
+          <span class="hint" id="emailHint"></span>
+        </div>
+      </fieldset>
+      <div id="submitContainer">
+        <input type="submit" value="Submit" id="submit" />
+        <span id="submitHint"></span>
+      </div>
+    </form>
+  </body>
+</html>

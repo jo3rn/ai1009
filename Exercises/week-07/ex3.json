@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Regina Müller",
+    "weight": 50,
+    "height": 1.6,
+    "gender": "female",
+    "email": "regina@mueller.com",
+    "remarks": ""
+  },
+  {
+    "id": 2,
+    "name": "Peter Meier",
+    "weight": 80,
+    "height": 1.9,
+    "gender": "male",
+    "email": "peter@meier.com",
+    "remarks": ""
+  },
+  {
+    "id": 3,
+    "name": "Torsten Schmidt",
+    "weight": 100,
+    "height": 1.86,
+    "gender": "male",
+    "email": "torsten@schmidt.com",
+    "remarks": ""
+  }
+]
