@@ -2,7 +2,8 @@ const keyboardButtons = document.querySelectorAll(".keyboard-button");
 
 const boardState = ["", "", "", "", "", ""];
 const solution = "fulda";
-const evaluations = [null, null, null, null, null, null];
+let currentAttempt = "";
+const evaluations = [[], [], [], [], [], []];
 let rowIndex = 0;
 
 const isEqual = (attempt, index) => {
@@ -14,19 +15,41 @@ const isPartOf = (attempt) => {
 };
 
 const evaluateWord = (word) => {
+  console.log(boardState);
+  console.log(currentAttempt);
+  console.log(evaluations);
+
+  const currentRow = document.querySelectorAll(".game-row")[rowIndex];
+
   for (const index in word) {
-    console.log(isEqual(word, index));
-    console.log(isPartOf(word[index]));
-    console.log(word[index]);
+    const currentLetter = currentRow.children[index];
+
+    if (isEqual(word, index)) {
+      evaluations[rowIndex][index] = "correct";
+      currentLetter.classList.add("green");
+    } else if (isPartOf(word[index])) {
+      evaluations[rowIndex][index] = "present";
+      currentLetter.classList.add("yellow");
+    } else {
+      evaluations[rowIndex][index] = "absent";
+      currentLetter.classList.add("grey");
+    }
   }
 };
 
 const enterPressed = () => {
   console.log("enter gedrückt");
+  evaluateWord(currentAttempt);
+  boardState[rowIndex] = currentAttempt;
+  rowIndex++;
+  currentAttempt = "";
 };
 
 const trashPressed = () => {
   console.log("trash gedrückt");
+  console.log(currentAttempt);
+  currentAttempt = currentAttempt.slice(0, -1);
+  console.log(currentAttempt);
 };
 
 for (const keyboardButton of keyboardButtons) {
@@ -41,10 +64,9 @@ for (const keyboardButton of keyboardButtons) {
       const nextCell = document.querySelector(".row-cell:empty");
       const letter = keyboardButton.innerHTML;
       nextCell.innerHTML = letter;
-      console.log(letter);
+
+      currentAttempt += letter;
+      console.log(currentAttempt);
     });
   }
 }
-
-evaluateWord("fanor");
-console.log(evaluations);
