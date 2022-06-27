@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Übung 8 Aufgabe 4</title>
+  </head>
+  <body>
+    <input id="postalCode" type="text" placeholder="PLZ, z.B. 36037" />
+    <div id="address">Some address</div>
+    <script>
+      const inputPostalCode = document.querySelector("#postalCode");
+      const divAddress = document.querySelector("#address");
+      const googleApiKey = "ADD API KEY HERE";
+      const apiUrl =
+        "https://maps.googleapis.com/maps/api/geocode/json?key=" +
+        googleApiKey +
+        "&components=country:DE|postal_code:";
+      let fetchData = {
+        mode: "cors", // try this with mode: cors and mode: no-cors
+      };
+
+      inputPostalCode.oninput = () => {
+        divAddress.innerHTML = "Loading...";
+        fetch(apiUrl + inputPostalCode.value)
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            divAddress.innerHTML = data.results[0].formatted_address;
+          })
+          .catch((err) => {
+            divAddress.innerHTML = "No Data";
+          });
+      };
+    </script>
+  </body>
+</html>
