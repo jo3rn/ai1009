@@ -2,54 +2,79 @@ const keyboardButtons = document.querySelectorAll(".keyboard-button");
 
 const boardState = ["", "", "", "", "", ""];
 const solution = "fulda";
+let evalSolution = "fulda";
 let currentAttempt = "";
 const evaluations = [[], [], [], [], [], []];
 let rowIndex = 0;
 
+function clearCharAt(index) {
+  return `${evalSolution.slice(0, index)}_${evalSolution.slice(index + 1)}`;
+}
+
 const isEqual = (attempt, index) => {
-  return attempt[index] === solution[index];
+  return attempt === solution[index];
 };
 
 const isPartOf = (attempt) => {
-  return solution.indexOf(attempt) != -1;
+  return evalSolution.indexOf(attempt) != -1;
 };
 
-const evaluateWord = (word) => {
-  console.log(boardState);
-  console.log(currentAttempt);
-  console.log(evaluations);
-
+const evaluateAttempt = () => {
   const currentRow = document.querySelectorAll(".game-row")[rowIndex];
 
-  for (const index in word) {
-    const currentLetter = currentRow.children[index];
-
-    if (isEqual(word, index)) {
+  for (let index = 0; index < currentAttempt.length; index++) {
+    const currentLetter = currentAttempt[index];
+    const currentLetterContainer = currentRow.children[index];
+    if (isEqual(currentLetter, index)) {
+      evalSolution = clearCharAt(index);
       evaluations[rowIndex][index] = "correct";
-      currentLetter.classList.add("green");
-    } else if (isPartOf(word[index])) {
-      evaluations[rowIndex][index] = "present";
-      currentLetter.classList.add("yellow");
-    } else {
-      evaluations[rowIndex][index] = "absent";
-      currentLetter.classList.add("grey");
+      currentLetterContainer.classList.add("green");
     }
   }
+
+  for (let index = 0; index < currentAttempt.length; index++) {
+    const currentLetter = currentAttempt[index];
+    const currentLetterContainer = currentRow.children[index];
+    if (isPartOf(currentLetter)) {
+      evalSolution = clearCharAt(solution.indexOf(currentLetter));
+      evaluations[rowIndex][index] = "present";
+      currentLetterContainer.classList.add("yellow");
+    } else if (!isEqual(currentLetter, index)) {
+      evaluations[rowIndex][index] = "absent";
+      currentLetterContainer.classList.add("grey");
+    }
+  }
+
+  evalSolution = solution;
 };
 
 const enterPressed = () => {
-  console.log("enter gedrückt");
-  evaluateWord(currentAttempt);
-  boardState[rowIndex] = currentAttempt;
-  rowIndex++;
-  currentAttempt = "";
+  if (currentAttempt.length == 5) {
+    evaluateAttempt();
+    boardState[rowIndex] = currentAttempt;
+    rowIndex++;
+    currentAttempt = "";
+  }
+};
+
+const deleteLastLetter = () => {
+  const nonEmptyCells = document.querySelectorAll(".row-cell:not(:empty)");
+  if (nonEmptyCells.length > 0 && nonEmptyCells.length % (rowIndex * 5) != 0) {
+    nonEmptyCells[nonEmptyCells.length - 1].innerHTML = "";
+  }
 };
 
 const trashPressed = () => {
-  console.log("trash gedrückt");
-  console.log(currentAttempt);
   currentAttempt = currentAttempt.slice(0, -1);
-  console.log(currentAttempt);
+  deleteLastLetter();
+};
+
+const letterPressed = (letter) => {
+  if (currentAttempt.length < 5) {
+    const nextCell = document.querySelector(".row-cell:empty");
+    nextCell.innerHTML = letter;
+    currentAttempt += letter;
+  }
 };
 
 for (const keyboardButton of keyboardButtons) {
@@ -60,13 +85,8 @@ for (const keyboardButton of keyboardButtons) {
     keyboardButton.addEventListener("click", trashPressed, false);
     continue;
   } else {
-    keyboardButton.addEventListener("click", (e) => {
-      const nextCell = document.querySelector(".row-cell:empty");
-      const letter = keyboardButton.innerHTML;
-      nextCell.innerHTML = letter;
-
-      currentAttempt += letter;
-      console.log(currentAttempt);
+    keyboardButton.addEventListener("click", () => {
+      letterPressed(keyboardButton.innerHTML);
     });
   }
 }
