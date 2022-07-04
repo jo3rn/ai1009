@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knotenbezieung</title>
+  </head>
+  <body>
+    <script>
+      const html = document.querySelector("html");
+      const head = html.firstElementChild;
+      const body = html.lastElementChild;
+      console.log(html);
+      console.log(html.firstElementChild);
+      console.log(html.lastElementChild);
+      console.log(head.parentElement);
+      console.log(body.parentNode);
+      console.log(head.nextSibling); // Textknoten
+      console.log(head.nextElementSibling); // HTML Element
+      console.log(body.previousSibling);
+      console.log(body.previousElementSibling);
+    </script>
+  </body>
+</html>
