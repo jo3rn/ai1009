@@ -5,6 +5,7 @@ Dies ist das Repository für das Modul AI1009 im Sommersemester 2022 an der Hoch
 - [Exercises](./Exercises/)
 - [SU_dump](./SU_dump/)
 - [Wordle](./wordle/)
+- [old_exam](./old_exam/)
 
 ## Mitwirken
 

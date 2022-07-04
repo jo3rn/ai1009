@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LAN</title>
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+        <label for="team">Team:</label>
+        <input type="text" name="team" id="team" />
+      </div>
+      <input type="reset" value="Zurücksetzen" />
+      <input type="submit" value="Anmelden" id="anmelden" />
+      <div id="angemeldet"></div>
+    </form>
+
+    <script>
+      const name = document.getElementById("name");
+      const team = document.getElementById("team");
+      const anmelden = document.getElementById("anmelden");
+      anmelden.addEventListener("click", (e) => {
+        e.preventDefault();
+        const nameString = name.value;
+        const teamString = team.value;
+        const url = `http://localhost:8080?name=${nameString}&team=${teamString}`;
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+          const angemeldet = document.getElementById("angemeldet");
+          angemeldet.innerHTML = this.response;
+        };
+
+        xhttp.open("GET", url);
+        xhttp.send();
+      });
+    </script>
+  </body>
+</html>

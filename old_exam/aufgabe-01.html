@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Klausur WS 19/20</title>
+  </head>
+  <body>
+    <h1>Login page</h1>
+    <form action="ageCheck.php" method="get">
+      <input type="text" name="uname" />
+      <br />
+      <input type="text" name="age" />
+      <br />
+      <input type="submit" />
+    </form>
+    <p>
+      You are
+      <span id="checkRes"></span>
+      allowed to use this service.
+    </p>
+    <script>
+      const checkRes = document.getElementById("checkRes");
+      checkRes.innerHTML = "not";
+      checkRes.style.fontWeight = "bold";
+
+      const p = document.querySelector("p");
+      const a = document.createElement("a");
+      a.href = "secretArea.php";
+      a.innerHTML = "Attention, access classified";
+      p.appendChild(a);
+    </script>
+  </body>
+</html>
