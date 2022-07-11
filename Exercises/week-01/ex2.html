@@ -18,32 +18,26 @@
         <br />
 
         <label for="gewicht">Gewicht</label>
-        <input type="number" name="gewicht" id="gewicht" required="true" />
+        <input type="number" name="gewicht" id="gewicht" />
         <br />
         <label for="groesse">Größe</label>
-        <input type="number" name="groesse" id="groesse" required="true" />
+        <input type="number" name="groesse" id="groesse" />
 
         <br />
         <br />
 
         <fieldset>
           <legend>Geschlecht</legend>
-          <input type="radio" name="geschlecht" id="male" />
+          <input type="radio" name="geschlecht" id="male" value="male" />
           <label for="male">Männlich</label>
 
-          <input type="radio" name="geschlecht" id="female" />
+          <input type="radio" name="geschlecht" id="female" value="female" />
           <label for="female">Weiblich</label>
+
+          <input type="radio" name="geschlecht" id="diverse" value="diverse" />
+          <label for="diverse">Sonstiges</label>
         </fieldset>
 
-        <br />
-
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" />
-        <br />
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" />
-
-        <br />
         <br />
 
         <input type="submit" value="Absenden" />
