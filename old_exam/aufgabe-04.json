@@ -1,0 +1,23 @@
+{
+  "name": "Hochschule Fulda",
+  "street": "Leipziger Straße",
+  "houseNumber": "123",
+  "postalCode": 36037,
+  "city": "Fulda",
+  "employees": [
+    {
+      "name": "D. Biezā",
+      "telephone": 3050,
+      "responsibilities": ["AI-Support", "Betreuung Software-Labore", "Lehre"]
+    },
+    {
+      "name": "C. Pape",
+      "telephone": 379,
+      "responsibilities": ["Betreuung WI-Labor", "Virtualisierung"]
+    },
+    {
+      "name": "B. Bomsdorf",
+      "responsibilities": ["Dekanin"]
+    }
+  ]
+}
