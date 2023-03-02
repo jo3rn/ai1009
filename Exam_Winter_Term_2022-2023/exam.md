@@ -167,7 +167,7 @@ Das folgende JSON ist nicht valide. Markieren Sie die vier fehlerhaften Stellen 
       "lastName": "Pape",
       "number": 379,
       "areas": ["Betreuung WI-Labor", "Virtualisierung", null]
-    },
+    }
   ),
   hasLibrary: true,
   "students": 9300,
