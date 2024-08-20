@@ -24,6 +24,10 @@ Dies ist das Repository für das Modul AI1009 "Web-Applikationen" im Sommersemes
 
   (manche) Aufgaben und Lösungsvorschläge der Klausur des Sommersemesters 2020
 
+## Aufzeichnungen
+
+Der Seminaristische Unterricht im Hörsaal wurde mitgeschnitten und ist [auf PeerTube verfügbar](https://tube.tchncs.de/w/p/igAXM7tGHmvzarE8NoBch5).
+
 ## Mitwirken
 
 1. Du hast einen Fehler im Code entdeckt? Pull Requests sind willkommen!
